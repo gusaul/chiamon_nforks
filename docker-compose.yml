@@ -20,15 +20,9 @@ services:
       - '/:/host:ro,rslave'
     network_mode: host
   chia_exporter:
-    build: chia_exporter
-    command:
-      - "-cert"
-      - "/etc/chia.crt"
-      - "-key"
-      - "/etc/chia.key"
+    build: chia_exporter_nforks
     volumes:
-      - ${HOME}/.chia/mainnet/config/ssl/full_node/private_full_node.crt:/etc/chia.crt
-      - ${HOME}/.chia/mainnet/config/ssl/full_node/private_full_node.key:/etc/chia.key
+      - ${HOME}/:/etc/key
     network_mode: host
   prometheus:
     build: prometheus

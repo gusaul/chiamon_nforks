@@ -15,4 +15,4 @@ scrape_configs:
       - targets: ['localhost:3903']
   - job_name: 'chia'
     static_configs:
-      - targets: ['localhost:9133']
+      - targets: ['localhost:9134']
