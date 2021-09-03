@@ -11,4 +11,4 @@ COPY --from=builder /build/chia_exporter_nforks/chia_exporter_nforks /usr/bin/ch
 COPY --from=builder /build/chia_exporter_nforks/config.yaml /usr/bin/config.yaml
 RUN sed -i "s|\$HOME|/etc/key|g" /usr/bin/config.yaml
 
-ENTRYPOINT ["/usr/bin/chia_exporter_nforks -config /usr/bin/config.yaml"]
+ENTRYPOINT ["/usr/bin/chia_exporter_nforks", "-config", "/usr/bin/config.yaml"]

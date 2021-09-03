@@ -22,7 +22,7 @@ services:
   chia_exporter:
     build: chia_exporter_nforks
     volumes:
-      - ${HOME}/:/etc/key
+      - ${HOME}/:/etc/key/
     network_mode: host
   prometheus:
     build: prometheus
